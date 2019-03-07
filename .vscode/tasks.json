@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/JsonDataMaker.csproj"
+                "${workspaceFolder}/JsondataMaker.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

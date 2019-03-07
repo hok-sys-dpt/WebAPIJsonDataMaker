@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using JsonDataMaker.Controller;
+using JsondataMaker.Controller;
 
-namespace JsonDataMaker
+namespace JsondataMaker
 {
     class Program
     {

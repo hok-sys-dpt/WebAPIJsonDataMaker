@@ -1,4 +1,4 @@
-namespace JsonDataMaker.Models.GW0008
+namespace JsondataMaker.Models.GW0008.Request
 {
     public class YokinkozaZandakashokai
     {

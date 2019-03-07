@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 using CsvHelper;
-using JsonDataMaker.Models.GW0008;
-using JsonDataMaker.Models.Common;
+using JsondataMaker.Models.GW0008.Request;
+using JsondataMaker.Models.GW0008.Response;
+using JsondataMaker.Models.Common;
 using Newtonsoft.Json;
 using System;
 
-namespace JsonDataMaker.Logic
+namespace JsondataMaker.Logic
 {
     public class GW0008Logic
     {
-        public IEnumerable<RequestCsv> CsvRead(CsvReader csv)
+        public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv)
         {
-            // csv.Configuration.RegisterClassMap<RequestCsvMap>();
             var records = csv.GetRecords<RequestCsv>();
             foreach (RequestCsv data in records)
             {
@@ -19,7 +19,7 @@ namespace JsonDataMaker.Logic
             }
         }
 
-        public RequestJson NewCsv(RequestCsv data)
+        public RequestJson NewRequestJson(RequestCsv data)
         {
             var returnData = new RequestJson()
             {
@@ -27,6 +27,29 @@ namespace JsonDataMaker.Logic
                 RequestMessageData = new RequestMessageData()
                 {
                     WisRequestSystemInfo = new WisRequestSystemInfo(),
+                    YokinkozaZandakashokai = data.YokinkozaZandakashokai
+                }
+            };
+            return (returnData);
+        }
+
+        public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv)
+        {
+            var records = csv.GetRecords<ResponseCsv>();
+            foreach (ResponseCsv data in records)
+            {
+                yield return (data);
+            }
+        }
+
+        public ResponseJson NewResponseJson(ResponseCsv data)
+        {
+            var returnData = new ResponseJson()
+            {
+                FileNo = data.FileId,
+                ResponseMessageData = new ResponseMessageData()
+                {
+                    WisResponseSystemInfo = new WisResponseSystemInfo(),
                     YokinkozaZandakashokai = data.YokinkozaZandakashokai
                 }
             };
