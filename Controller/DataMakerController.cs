@@ -3,10 +3,11 @@ using System.IO;
 using CsvHelper;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using JsonDataMaker.Logic;
-using JsonDataMaker.Models.GW0008;
+using JsondataMaker.Logic;
+using JsondataMaker.Models.GW0008.Request;
+using JsondataMaker.Models.GW0008.Response;
 
-namespace JsonDataMaker.Controller
+namespace JsondataMaker.Controller
 {
     public class DataMakerController
     {
@@ -25,21 +26,25 @@ namespace JsonDataMaker.Controller
                         var gw0008logic = new GW0008Logic();
                         if (reqOrRes == "Request")
                         {
-                            var gw0008data = gw0008logic.CsvRead(csv);
+                            var gw0008data = gw0008logic.ReadCsvRequest(csv);
                             foreach (RequestCsv data in gw0008data)
                             {
-                                var outputData = gw0008logic.NewCsv(data);
+                                var outputData = gw0008logic.NewRequestJson(data);
                                 var jf = new JsonFileWriter();
                                 jf.New(outputData.RequestMessageData, outputData.FileNo, apino, reqOrRes);
                             }
                         }
-                        // WIP: ResponseDataの処理
                         else
                         {
-                            //do something
+                            var gw0008data = gw0008logic.ReadCsvResponse(csv);
+                            foreach (ResponseCsv data in gw0008data)
+                            {
+                                var outputData = gw0008logic.NewResponseJson(data);
+                                var jf = new JsonFileWriter();
+                                jf.New(outputData.ResponseMessageData, outputData.FileNo, apino, reqOrRes);
+                            }                         
                         }
                         break;
-
                 }
             }
             // WIP: 入力ファイルが２つのAPI
