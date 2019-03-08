@@ -8,6 +8,7 @@ using JsondataMaker.Models.GW0008.Response;
 using JsondataMaker.Models.GW0012.Request;
 using JsondataMaker.Models.GW0012.Response;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace JsondataMaker.Controller
 {
@@ -17,7 +18,8 @@ namespace JsondataMaker.Controller
         {
             // WIP: 入力ファイルが１つのAPI
             // テーブルクラスを作成して振り分ける isOneFile的な
-            var reader = new StreamReader (path1);
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            var reader = new StreamReader (path1, Encoding.GetEncoding("shift-jis"));
             var csv = new CsvReader (reader);
             switch (apino)
             {
