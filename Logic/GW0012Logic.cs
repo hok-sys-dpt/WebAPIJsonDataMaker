@@ -1,56 +1,56 @@
 using System.Collections.Generic;
 using CsvHelper;
-using JsondataMaker.Models.GW0008.Request;
-using JsondataMaker.Models.GW0008.Response;
+using JsondataMaker.Models.GW0012.Request;
+using JsondataMaker.Models.GW0012.Response;
 using JsondataMaker.Models.Common;
 using Newtonsoft.Json;
 using System;
 
 namespace JsondataMaker.Logic
 {
-    public class GW0008Logic
+    public class GW0012Logic
     {
-        public IEnumerable<GW0008RequestCsv> ReadCsvRequest(CsvReader csv)
+        public IEnumerable<GW0012RequestCsv> ReadCsvRequest(CsvReader csv)
         {
-            var records = csv.GetRecords<GW0008RequestCsv>();
-            foreach (GW0008RequestCsv data in records)
+            var records = csv.GetRecords<GW0012RequestCsv>();
+            foreach (GW0012RequestCsv data in records)
             {
                 yield return (data);
             }
         }
 
-        public GW0008RequestJson NewRequestJson(GW0008RequestCsv data)
+        public GW0012RequestJson NewRequestJson(GW0012RequestCsv data)
         {
-            var returnData = new GW0008RequestJson()
+            var returnData = new GW0012RequestJson()
             {
                 FileNo = data.FileId,
                 RequestMessageData = new RequestMessageData()
                 {
                     WisRequestSystemInfo = new WisRequestSystemInfo(),
-                    YokinkozaZandakashokai = data.YokinkozaZandakashokai
+                    GaikaYokinZandakaShokai = data.GaikaYokinZandakaShokai
                 }
             };
             return (returnData);
         }
 
-        public IEnumerable<GW0008ResponseCsv> ReadCsvResponse(CsvReader csv)
+        public IEnumerable<GW0012ResponseCsv> ReadCsvResponse(CsvReader csv)
         {
-            var records = csv.GetRecords<GW0008ResponseCsv>();
-            foreach (GW0008ResponseCsv data in records)
+            var records = csv.GetRecords<GW0012ResponseCsv>();
+            foreach (GW0012ResponseCsv data in records)
             {
                 yield return (data);
             }
         }
 
-        public GW0008ResponseJson NewResponseJson(GW0008ResponseCsv data)
+        public GW0012ResponseJson NewResponseJson(GW0012ResponseCsv data)
         {
-            var returnData = new GW0008ResponseJson()
+            var returnData = new GW0012ResponseJson()
             {
                 FileNo = data.FileId,
                 ResponseMessageData = new ResponseMessageData()
                 {
                     WisResponseSystemInfo = new WisResponseSystemInfo(),
-                    YokinkozaZandakashokai = data.YokinkozaZandakashokai
+                    GaikaYokinZandakaShokai= data.GaikaYokinZandakaShokai
                 }
             };
             return (returnData);
