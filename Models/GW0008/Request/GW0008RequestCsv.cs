@@ -1,6 +1,6 @@
 namespace JsondataMaker.Models.GW0008.Request
 {
-    public class RequestCsv
+    public class GW0008RequestCsv
     {
         public string FileId { get; set; }
         public YokinkozaZandakashokai YokinkozaZandakashokai { get; set; }
