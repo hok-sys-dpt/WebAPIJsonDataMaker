@@ -10,7 +10,7 @@ namespace JsondataMaker.Logic
         {
             var jsondata = JsonConvert.SerializeObject(model);
             Console.WriteLine(jsondata);
-            StreamWriter writer = new StreamWriter(apino + reqOrRes + fileId + ".json", true);
+            StreamWriter writer = new StreamWriter(apino + reqOrRes + fileId + ".json", false);
             writer.WriteLine(jsondata);
             writer.Close();
         }
