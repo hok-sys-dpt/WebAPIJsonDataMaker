@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace JsondataMaker.Logic
+namespace WebAPIJsonDataMaker.Logic
 {
     public class JsonFileWriter
     {

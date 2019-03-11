@@ -1,4 +1,4 @@
-namespace JsondataMaker.Models.Common
+namespace WebAPIJsonDataMaker.Models.Common
 {
     public interface IWisRequestSystemInfo
     {

@@ -1,4 +1,4 @@
-namespace JsondataMaker.Models.GW0008.Request
+namespace WebAPIJsonDataMaker.Models.GW0008.Request
 {
     public class KensaKomoku
     {

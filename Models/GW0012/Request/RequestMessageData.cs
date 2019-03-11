@@ -1,5 +1,6 @@
-﻿using JsondataMaker.Models.Common;
-namespace JsondataMaker.Models.GW0012.Request
+﻿using WebAPIJsonDataMaker.Models.Common;
+
+namespace WebAPIJsonDataMaker.Models.GW0012.Request
 {
     public class RequestMessageData
     {

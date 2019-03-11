@@ -1,4 +1,4 @@
-namespace JsondataMaker.Models.GW0012.Request
+namespace WebAPIJsonDataMaker.Models.GW0012.Request
 {
     public class GW0012RequestCsv
     {

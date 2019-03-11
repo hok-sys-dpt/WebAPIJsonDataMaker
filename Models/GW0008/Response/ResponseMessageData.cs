@@ -1,6 +1,6 @@
-using JsondataMaker.Models.Common;
+using WebAPIJsonDataMaker.Models.Common;
 
-namespace JsondataMaker.Models.GW0008.Response
+namespace WebAPIJsonDataMaker.Models.GW0008.Response
 {
     public class ResponseMessageData
     {
