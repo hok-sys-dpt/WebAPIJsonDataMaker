@@ -1,4 +1,4 @@
-namespace JsondataMaker.Models.GW0008.Response
+namespace WebAPIJsonDataMaker.Models.GW0008.Response
 {
     public class ShokaiKozaJoho
     {

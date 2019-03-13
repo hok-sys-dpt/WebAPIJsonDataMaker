@@ -1,4 +1,4 @@
-﻿namespace JsondataMaker.Models.GW0012.Response
+﻿namespace WebAPIJsonDataMaker.Models.GW0012.Response
 {
     public class GaikaYokinZandakaShokai
     {

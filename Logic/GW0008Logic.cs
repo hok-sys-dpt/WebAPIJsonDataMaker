@@ -1,59 +1,65 @@
 using System.Collections.Generic;
 using CsvHelper;
-using JsondataMaker.Models.GW0008.Request;
-using JsondataMaker.Models.GW0008.Response;
-using JsondataMaker.Models.Common;
-using Newtonsoft.Json;
-using System;
+using WebAPIJsonDataMaker.Models.Common;
+using WebAPIJsonDataMaker.Models.GW0008.Request;
+using WebAPIJsonDataMaker.Models.GW0008.Response;
 
-namespace JsondataMaker.Logic
+namespace WebAPIJsonDataMaker.Logic
 {
-    public class GW0008Logic
+    public class GW0008Logic : IGWLogic
     {
-        public IEnumerable<GW0008RequestCsv> ReadCsvRequest(CsvReader csv)
+        public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv)
         {
             var records = csv.GetRecords<GW0008RequestCsv>();
             foreach (GW0008RequestCsv data in records)
             {
-                yield return (data);
+                yield return (new RequestCsv() { GW0008RequestCsv = data });
             }
         }
 
-        public GW0008RequestJson NewRequestJson(GW0008RequestCsv data)
+        public void NewRequestJson(RequestCsv data, string apino)
         {
-            var returnData = new GW0008RequestJson()
+            var outputData = new RequestJson()
             {
-                FileNo = data.FileId,
-                RequestMessageData = new RequestMessageData()
+                GW0008RequestJson = new GW0008RequestJson()
                 {
-                    WisRequestSystemInfo = new WisRequestSystemInfo(),
-                    YokinkozaZandakashokai = data.YokinkozaZandakashokai
+                    FileNo = data.GW0008RequestCsv.FileId,
+                    RequestMessageData = new RequestMessageData()
+                    {
+                        WisRequestSystemInfo = new WisRequestSystemInfo(),
+                        YokinkozaZandakashokai = data.GW0008RequestCsv.YokinkozaZandakashokai
+                    }
                 }
             };
-            return (returnData);
+            var jf = new JsonFileWriter();
+            jf.New(outputData.GW0008RequestJson.RequestMessageData, outputData.GW0008RequestJson.FileNo, apino, "Request");
         }
 
-        public IEnumerable<GW0008ResponseCsv> ReadCsvResponse(CsvReader csv)
+        public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv)
         {
             var records = csv.GetRecords<GW0008ResponseCsv>();
             foreach (GW0008ResponseCsv data in records)
             {
-                yield return (data);
+                yield return (new ResponseCsv() { GW0008ResponseCsv = data });
             }
         }
 
-        public GW0008ResponseJson NewResponseJson(GW0008ResponseCsv data)
+        public void NewResponseJson(ResponseCsv data, string apino)
         {
-            var returnData = new GW0008ResponseJson()
+            var outputData = new ResponseJson()
             {
-                FileNo = data.FileId,
-                ResponseMessageData = new ResponseMessageData()
+                GW0008ResponseJson = new GW0008ResponseJson()
                 {
-                    WisResponseSystemInfo = new WisResponseSystemInfo(),
-                    YokinkozaZandakashokai = data.YokinkozaZandakashokai
+                    FileNo = data.GW0008ResponseCsv.FileId,
+                    ResponseMessageData = new ResponseMessageData()
+                    {
+                        WisResponseSystemInfo = new WisResponseSystemInfo(),
+                        YokinkozaZandakashokai = data.GW0008ResponseCsv.YokinkozaZandakashokai
+                    }
                 }
             };
-            return (returnData);
+            var jf = new JsonFileWriter();
+            jf.New(outputData.GW0008ResponseJson.ResponseMessageData, outputData.GW0008ResponseJson.FileNo, apino, "Response");
         }
     }
 }
