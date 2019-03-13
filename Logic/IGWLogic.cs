@@ -10,5 +10,6 @@ namespace WebAPIJsonDataMaker.Logic
         void NewRequestJson(RequestCsv data, string apino);
         IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv);
         void NewResponseJson(ResponseCsv data, string apino);
+        IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2);
     }
 }
