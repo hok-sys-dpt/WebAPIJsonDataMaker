@@ -1,4 +1,5 @@
 using System.IO;
+using System.Text;
 using CsvHelper;
 using WebAPIJsonDataMaker.Logic;
 using WebAPIJsonDataMaker.Models.Common;
@@ -11,9 +12,8 @@ namespace WebAPIJsonDataMaker.Controller
         {
             // WIP: 入力ファイルが１つのAPI
             // テーブルクラスを作成して振り分ける isOneFile的な
-            var reader = new StreamReader(path1);
-            // Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            // var reader = new StreamReader (path1, Encoding.GetEncoding("shift-jis"));
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            var reader = new StreamReader (path1, Encoding.GetEncoding("shift-jis"));
             var csv = new CsvReader(reader);
 
             switch (apino)
