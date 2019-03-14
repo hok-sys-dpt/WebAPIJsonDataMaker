@@ -10,13 +10,10 @@ namespace WebAPIJsonDataMaker.Controller
     {
         public void newJsonData(string apino, string reqOrRes, string path1, string path2)
         {
-            // WIP: 入力ファイルが１つのAPI
-            // テーブルクラスを作成して振り分ける isOneFile的な
+
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var reader = new StreamReader(path1, Encoding.GetEncoding("shift-jis"));
             var csv = new CsvReader(reader);
-            var reader2 = new StreamReader(path2);
-            var csv2 = new CsvReader(reader2);
 
             switch (apino)
             {
@@ -34,6 +31,7 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //GW1002法人IB利用口座照会
                 case "GW1002":
                     {
                         IGWLogic iGWLogic = new GW1002Logic();
@@ -43,6 +41,8 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         else
                         {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
                             newListData(iGWLogic, csv, csv2, apino, reqOrRes);
                         }
                         break;
@@ -74,6 +74,7 @@ namespace WebAPIJsonDataMaker.Controller
         {
             if (reqOrRes == "Request")
             {
+                throw new InvalidDataException();
             }
             else
             {

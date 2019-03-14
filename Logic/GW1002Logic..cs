@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using CsvHelper;
 using WebAPIJsonDataMaker.Models.Common;
-using WebAPIJsonDataMaker.Models.GW0012.Request;
 using WebAPIJsonDataMaker.Models.GW1002.Response;
 using WebAPIJsonDataMaker.Models.GW1002;
 using System.Linq;
 using Newtonsoft.Json;
 using System;
+using WebAPIJsonDataMaker.Models.GW1002.Request;
 
 namespace WebAPIJsonDataMaker.Logic
 {
@@ -14,30 +14,29 @@ namespace WebAPIJsonDataMaker.Logic
     {
         public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv)
         {
-            yield return (new RequestCsv());
-            // var records = csv.GetRecords<GW1002ResponseCsv>();
-            // foreach (GW1002ResponseCsv data in records)
-            // {
-            //     yield return (new RequestCsv() { GW1002ResponseCsv = data });
-            // }
+            var records = csv.GetRecords<GW1002RequestCsv>();
+            foreach (GW1002RequestCsv data in records)
+            {
+                yield return (new RequestCsv() { GW1002RequestCsv = data });
+            }
         }
 
         public void NewRequestJson(RequestCsv data, string apino)
         {
             var outputData = new RequestJson()
             {
-                GW0012RequestJson = new GW0012RequestJson()
+                GW1002RequestJson = new GW1002RequestJson()
                 {
-                    FileNo = data.GW0012RequestCsv.FileId,
+                    FileNo = data.GW1002RequestCsv.FileId,
                     RequestMessageData = new RequestMessageData()
                     {
                         WisRequestSystemInfo = new WisRequestSystemInfo(),
-                        GaikaYokinZandakaShokai = data.GW0012RequestCsv.GaikaYokinZandakaShokai
+                        IbRiyoukouzaShoukai = data.GW1002RequestCsv.IbRiyoukouzaShoukai
                     }
                 }
             };
             var jf = new JsonFileWriter();
-            jf.New(outputData.GW0012RequestJson.RequestMessageData, outputData.GW0012RequestJson.FileNo, apino, "Request");
+            jf.New(outputData.GW1002RequestJson.RequestMessageData, outputData.GW1002RequestJson.FileNo, apino, "Request");
         }
 
         public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2)
