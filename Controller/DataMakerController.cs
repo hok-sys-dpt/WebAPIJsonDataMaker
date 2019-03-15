@@ -54,6 +54,7 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+            }
         }
 
         public void newData(IGWLogic iGWLogic, CsvReader csv, string apino, string reqOrRes)
