@@ -61,5 +61,10 @@ namespace WebAPIJsonDataMaker.Logic
             var jf = new JsonFileWriter();
             jf.New(outputData.GW0008ResponseJson.ResponseMessageData, outputData.GW0008ResponseJson.FileNo, apino, "Response");
         }
+
+        public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
