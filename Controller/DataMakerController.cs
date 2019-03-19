@@ -38,6 +38,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //Gw0057振込予約実行
+                case "GW0057":
+                    {
+                        IGWLogic iGWLogic = new GW0057Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
                 //Gw1001法人IB契約者情報照会
                 case "GW1001":
                     {
