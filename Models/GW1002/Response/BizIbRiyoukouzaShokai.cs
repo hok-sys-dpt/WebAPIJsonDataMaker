@@ -3,16 +3,18 @@ using System.Collections.Generic;
 
 namespace WebAPIJsonDataMaker.Models.GW1002.Response
 {
-    public class IbRiyoukouzaShoukai
+    public class BizIbRiyoukouzaShokai
     {
         public string shoribi { get; set; }
         public string shoriJikoku { get; set; }
+        public int keiyakushaId { get; set; }
+        public int riyoshaId { get; set; }
         public int taishoKubun { get; set; }
         public string tenmeiKanji { get; set; }
         public KurikaeshiSeigyo KurikaeshiSeigyo { get; set; }
         public RiyoKozaJoho[] RiyoKozaJoho { get; set; }
 
-        public IbRiyoukouzaShoukai()
+        public BizIbRiyoukouzaShokai()
         {
             const int MaxItemCount = 50;
             KurikaeshiSeigyo = new KurikaeshiSeigyo();
