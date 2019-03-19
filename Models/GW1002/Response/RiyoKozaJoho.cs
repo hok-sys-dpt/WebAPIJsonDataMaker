@@ -15,7 +15,7 @@ namespace WebAPIJsonDataMaker.Models.GW1002.Response
         public string kozameigiKana { get; set; }
         public string kozameigiKanji { get; set; }
         public string tsukaCode { get; set; }
-        public int furikomiNyukinTsuchi { get; set; }
+        public int furikomiNyukinTsuchiHyoji { get; set; }
         public string kozaMemo { get; set; }
     }
 }

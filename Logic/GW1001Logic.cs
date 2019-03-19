@@ -58,8 +58,13 @@ namespace WebAPIJsonDataMaker.Logic
                     }
                 }
             };
-                        var jf = new JsonFileWriter();
+            var jf = new JsonFileWriter();
             jf.New(outputData.GW1001ResponseJson.ResponseMessageData, outputData.GW1001ResponseJson.FileNo, apino, "Response");
+        }
+
+        public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
