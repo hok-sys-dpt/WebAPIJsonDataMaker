@@ -5,6 +5,7 @@ using WebAPIJsonDataMaker.Models.GW0020.Response;
 using WebAPIJsonDataMaker.Models.GW0057.Response;
 using WebAPIJsonDataMaker.Models.GW1001.Response;
 using WebAPIJsonDataMaker.Models.GW1002.Response;
+using WebAPIJsonDataMaker.Models.GW1003.Response;
 using WebAPIJsonDataMaker.Models.GW1004.Response;
 using WebAPIJsonDataMaker.Models.GW1007.Response;
 using WebAPIJsonDataMaker.Models.GW1012.Response;
@@ -20,6 +21,7 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW0057ResponseJson GW0057ResponseJson { get; set; }
         public GW1001ResponseJson GW1001ResponseJson { get; set; }
         public GW1002ResponseJson GW1002ResponseJson { get; set; }
+        public GW1003ResponseJson GW1003ResponseJson { get; set; }
         public GW1004ResponseJson GW1004ResponseJson { get; set; }
         public GW1007ResponseJson GW1007ResponseJson { get; set; }
         public GW1012ResponseJson GW1012ResponseJson { get; set; }
