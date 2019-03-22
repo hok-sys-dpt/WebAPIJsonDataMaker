@@ -68,6 +68,20 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //GW1004総給振委託者情報照会
+                case "GW1004":
+                    {
+                        IGWLogic iGWLogic = new GW1004Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
+                //GW1012専用当座貸越実行
+                case "GW1012":
+                    {
+                        IGWLogic iGWLogic = new GW1012Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
             }
         }
 
