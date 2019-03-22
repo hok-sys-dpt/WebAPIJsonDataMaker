@@ -75,6 +75,22 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //GW1005口座振替委託者情報照会
+                case "GW1005":
+                    {
+                        IGWLogic iGWLogic = new GW1005Logic();
+                        if (reqOrRes == "Request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
+                        break;
+                    }
                 //GW1007地方税納入契約者情報照会
                 case "GW1007":
                     {
