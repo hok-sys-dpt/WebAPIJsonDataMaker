@@ -75,6 +75,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //GW1007地方税納入契約者情報照会
+                case "GW1007":
+                    {
+                        IGWLogic iGWLogic = new GW1007Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
                 //GW1012専用当座貸越実行
                 case "GW1012":
                     {
