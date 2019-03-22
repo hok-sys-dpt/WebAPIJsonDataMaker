@@ -128,6 +128,22 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //GW1005専用当座貸越取引明細照会
+                case "GW1016":
+                    {
+                        IGWLogic iGWLogic = new GW1016Logic();
+                        if (reqOrRes == "Request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
+                        break;
+                    }
             }
         }
 
