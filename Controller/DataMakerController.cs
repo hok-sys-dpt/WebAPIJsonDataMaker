@@ -75,6 +75,22 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //GW1003法人IB利用者照会
+                case "GW1003":
+                    {
+                        IGWLogic iGWLogic = new GW1003Logic();
+                        if (reqOrRes == "Request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
+                        break;
+                    }
                 //GW1004総給振委託者情報照会
                 case "GW1004":
                     {
