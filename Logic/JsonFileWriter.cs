@@ -1,16 +1,18 @@
 using System;
 using System.IO;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace WebAPIJsonDataMaker.Logic
 {
     public class JsonFileWriter
     {
-        public void New(object model, string fileId, string apino, string reqOrRes)
+        public void New(object model, int fileId, string apino, string reqOrRes)
         {
-            var jsondata = JsonConvert.SerializeObject(model);
-            Console.WriteLine(jsondata);
-            StreamWriter writer = new StreamWriter(apino + reqOrRes + fileId + ".json", false);
+            TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
+
+            var jsondata = JsonConvert.SerializeObject(model, Formatting.Indented);
+            StreamWriter writer = new StreamWriter($"{apino}{myTI.ToTitleCase(reqOrRes)}{fileId:D4}.json", false);
             writer.WriteLine(jsondata);
             writer.Close();
         }

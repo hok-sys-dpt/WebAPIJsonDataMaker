@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Text;
 using CsvHelper;
@@ -144,17 +145,22 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //上記以外のAPI
+                default:
+                    throw new Exception("API番号が誤っています");
             }
         }
 
         public void newData(IGWLogic iGWLogic, CsvReader csv, string apino, string reqOrRes)
         {
-            if (reqOrRes == "Request")
+            int i = 0;
+            if (reqOrRes == "request")
             {
                 var csvModel = iGWLogic.ReadCsvRequest(csv);
                 foreach (RequestCsv data in csvModel)
                 {
                     iGWLogic.NewRequestJson(data, apino);
+                    i++;
                 }
             }
             else
@@ -163,12 +169,15 @@ namespace WebAPIJsonDataMaker.Controller
                 foreach (ResponseCsv data in csvModel)
                 {
                     iGWLogic.NewResponseJson(data, apino);
+                    i++;
                 }
             }
+            Console.WriteLine($"{i}件のファイルを出力しました");
         }
 
         public void newListData(IGWLogic iGWLogic, CsvReader csv, CsvReader csv2, string apino, string reqOrRes)
         {
+            int i = 0;
             if (reqOrRes == "Request")
             {
                 throw new InvalidDataException();
@@ -179,8 +188,10 @@ namespace WebAPIJsonDataMaker.Controller
                 foreach (ResponseCsv data in csvModel)
                 {
                     iGWLogic.NewResponseJson(data, apino);
+                    i++;
                 }
             }
+            Console.WriteLine($"{i}件のファイルを出力しました");
         }
     }
 }
