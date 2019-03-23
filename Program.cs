@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using CommandLine;
 using Newtonsoft.Json;
 using WebAPIJsonDataMaker.Controller;
+using WebAPIJsonDataMaker.Logic;
 
 namespace WebAPIJsonDataMaker
 {
@@ -9,18 +11,34 @@ namespace WebAPIJsonDataMaker
     {
         static void Main(string[] args)
         {
-            //コマンドラインの引数
-            const int apiNo = 1;
-            const int file1 = 3;
-            const int file2 = 4;
-            const int reqOrRes = 2;
-
-            var cmd = Environment.GetCommandLineArgs();
-            var count = cmd.Length;
-
-            //コントローラー呼び出し
+            Console.WriteLine("\n 処理を開始します");
             var dc = new DataMakerController();
-            dc.newJsonData(cmd[apiNo], cmd[reqOrRes], cmd[file1],cmd[file2]);
+            try
+            {
+                Parser.Default.ParseArguments<Options>(args).WithParsed<Options>(o =>
+                {
+                    var reqOrRes = o.reqOrRes.ToLower();
+                    if (reqOrRes == "request" || reqOrRes == "response")
+                    {
+                        dc.newJsonData(o.apiNo, reqOrRes, "input1.csv", "input2.csv");
+                        Console.WriteLine("\n 正常に終了しました");
+                    }
+                    else
+                    {
+                        throw new Exception("Request または Responseを指定して下さい");
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("\n エラーが発生ました");
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                Console.Write("\n キーを押して終了してください");
+                Console.ReadKey(true);
+            }
         }
     }
 }
