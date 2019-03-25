@@ -64,7 +64,7 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1002":
                     {
                         IGWLogic iGWLogic = new GW1002Logic();
-                        if (reqOrRes == "Request")
+                        if (reqOrRes == "request")
                         {
                             newData(iGWLogic, csv, apino, reqOrRes);
                         }
@@ -80,7 +80,7 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1003":
                     {
                         IGWLogic iGWLogic = new GW1003Logic();
-                        if (reqOrRes == "Request")
+                        if (reqOrRes == "request")
                         {
                             newData(iGWLogic, csv, apino, reqOrRes);
                         }
@@ -103,7 +103,7 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1005":
                     {
                         IGWLogic iGWLogic = new GW1005Logic();
-                        if (reqOrRes == "Request")
+                        if (reqOrRes == "request")
                         {
                             newData(iGWLogic, csv, apino, reqOrRes);
                         }
@@ -129,11 +129,27 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
-                //GW1005専用当座貸越取引明細照会
+                //GW1016専用当座貸越取引明細照会
                 case "GW1016":
                     {
                         IGWLogic iGWLogic = new GW1016Logic();
-                        if (reqOrRes == "Request")
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
+                        break;
+                    }
+                //GW1018専用当座貸越予約明細照会
+                case "GW1018":
+                    {
+                        IGWLogic iGWLogic = new GW1018Logic();
+                        if (reqOrRes == "request")
                         {
                             newData(iGWLogic, csv, apino, reqOrRes);
                         }
@@ -178,7 +194,7 @@ namespace WebAPIJsonDataMaker.Controller
         public void newListData(IGWLogic iGWLogic, CsvReader csv, CsvReader csv2, string apino, string reqOrRes)
         {
             int i = 0;
-            if (reqOrRes == "Request")
+            if (reqOrRes == "request")
             {
                 throw new InvalidDataException();
             }
