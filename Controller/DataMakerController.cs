@@ -129,6 +129,20 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //GW1019専用当座貸越借入内容照会
+                case "GW1019":
+                    {
+                        IGWLogic iGWLogic = new GW1019Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
+                //GW1025IB振込振替状況照会
+                case "GW1025":
+                    {
+                        IGWLogic iGWLogic = new GW1025Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
                 //GW1016専用当座貸越取引明細照会
                 case "GW1016":
                     {
