@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Text;
 using CsvHelper;
@@ -63,7 +64,7 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1002":
                     {
                         IGWLogic iGWLogic = new GW1002Logic();
-                        if (reqOrRes == "Request")
+                        if (reqOrRes == "request")
                         {
                             newData(iGWLogic, csv, apino, reqOrRes);
                         }
@@ -79,7 +80,7 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1003":
                     {
                         IGWLogic iGWLogic = new GW1003Logic();
-                        if (reqOrRes == "Request")
+                        if (reqOrRes == "request")
                         {
                             newData(iGWLogic, csv, apino, reqOrRes);
                         }
@@ -96,6 +97,22 @@ namespace WebAPIJsonDataMaker.Controller
                     {
                         IGWLogic iGWLogic = new GW1004Logic();
                         newData(iGWLogic, csv, apino, reqOrRes);
+                        break;
+                    }
+                //GW1005口座振替委託者情報照会
+                case "GW1005":
+                    {
+                        IGWLogic iGWLogic = new GW1005Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
                         break;
                     }
                 //GW1007地方税納入契約者情報照会
@@ -126,17 +143,54 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes);
                         break;
                     }
+                //GW1016専用当座貸越取引明細照会
+                case "GW1016":
+                    {
+                        IGWLogic iGWLogic = new GW1016Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
+                        break;
+                    }
+                //GW1018専用当座貸越予約明細照会
+                case "GW1018":
+                    {
+                        IGWLogic iGWLogic = new GW1018Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes);
+                        }
+                        break;
+                    }
+                //上記以外のAPI
+                default:
+                    throw new Exception("API番号が誤っています");
             }
         }
 
         public void newData(IGWLogic iGWLogic, CsvReader csv, string apino, string reqOrRes)
         {
-            if (reqOrRes == "Request")
+            int i = 0;
+            if (reqOrRes == "request")
             {
                 var csvModel = iGWLogic.ReadCsvRequest(csv);
                 foreach (RequestCsv data in csvModel)
                 {
                     iGWLogic.NewRequestJson(data, apino);
+                    i++;
                 }
             }
             else
@@ -145,13 +199,16 @@ namespace WebAPIJsonDataMaker.Controller
                 foreach (ResponseCsv data in csvModel)
                 {
                     iGWLogic.NewResponseJson(data, apino);
+                    i++;
                 }
             }
+            Console.WriteLine($"{i}件のファイルを出力しました");
         }
 
         public void newListData(IGWLogic iGWLogic, CsvReader csv, CsvReader csv2, string apino, string reqOrRes)
         {
-            if (reqOrRes == "Request")
+            int i = 0;
+            if (reqOrRes == "request")
             {
                 throw new InvalidDataException();
             }
@@ -161,8 +218,10 @@ namespace WebAPIJsonDataMaker.Controller
                 foreach (ResponseCsv data in csvModel)
                 {
                     iGWLogic.NewResponseJson(data, apino);
+                    i++;
                 }
             }
+            Console.WriteLine($"{i}件のファイルを出力しました");
         }
     }
 }
