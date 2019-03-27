@@ -12,7 +12,7 @@ namespace WebAPIJsonDataMaker.Logic
             TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
 
             var jsondata = JsonConvert.SerializeObject(model, Formatting.Indented);
-            StreamWriter writer = new StreamWriter($"{apino}{myTI.ToTitleCase(reqOrRes)}{fileId:D4}.json", false);
+            StreamWriter writer = new StreamWriter($"出力データ/{apino}/{reqOrRes}/{apino}{myTI.ToTitleCase(reqOrRes)}{fileId:D4}.json", false);
             writer.WriteLine(jsondata);
             writer.Close();
         }

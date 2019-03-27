@@ -5,16 +5,16 @@ namespace WebAPIJsonDataMaker.Logic
 {
     public class Options
     {
-        [Value(0, MetaName = "apino")]
+        [Option('a', "apino", Required = true, HelpText = "API番号 GWxxxx")] 
         public string apiNo { get; set; }
 
-        [Value(1, MetaName = "RequestOrResponse")]
+        [Option('r', "io", Required = true, HelpText = "Request/Response")] 
         public string reqOrRes { get; set; }
 
-        [Value(2, MetaName = "file1Name")]
+        [Option('m', "mainfile", Required = true, HelpText = "基本ファイル")] 
         public string file1Name { get; set; }
         
-        [Value(3, MetaName = "file2Name")]
+        [Option('l', "listfile", Required = false, HelpText = "明細ファイル　反復項目がある場合のみ指定して下さい")] 
         public string file2Name { get; set; }
     }
 }
