@@ -21,7 +21,7 @@ namespace WebAPIJsonDataMaker.Logic
             }
         }
 
-        public void NewRequestJson(RequestCsv data, string apino)
+        public void NewRequestJson(RequestCsv data, string apino, string outputpath)
         {
             var outputData = new RequestJson()
             {
@@ -36,7 +36,7 @@ namespace WebAPIJsonDataMaker.Logic
                 }
             };
             var jf = new JsonFileWriter();
-            jf.New(outputData.GW1005RequestJson.RequestMessageData, outputData.GW1005RequestJson.FileNo, apino, "Request");
+            jf.New(outputData.GW1005RequestJson.RequestMessageData, outputData.GW1005RequestJson.FileNo, apino, "Request", outputpath);
         }
 
         public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2)
@@ -60,7 +60,7 @@ namespace WebAPIJsonDataMaker.Logic
             };
         }
 
-        public void NewResponseJson(ResponseCsv data, string apino)
+        public void NewResponseJson(ResponseCsv data, string apino, string outputpath)
         {
             var outputData = new ResponseJson()
             {
@@ -75,7 +75,7 @@ namespace WebAPIJsonDataMaker.Logic
                 }
             };
             var jf = new JsonFileWriter();
-            jf.New(outputData.GW1005ResponseJson.ResponseMessageData, outputData.GW1005ResponseJson.FileNo, apino, "Response");
+            jf.New(outputData.GW1005ResponseJson.ResponseMessageData, outputData.GW1005ResponseJson.FileNo, apino, "Response", outputpath);
         }
 
         public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv)

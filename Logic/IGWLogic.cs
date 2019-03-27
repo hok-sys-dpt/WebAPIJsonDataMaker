@@ -7,9 +7,9 @@ namespace WebAPIJsonDataMaker.Logic
     public interface IGWLogic
     {
         IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv);
-        void NewRequestJson(RequestCsv data, string apino);
+        void NewRequestJson(RequestCsv data, string apino, string outputpath);
         IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv);
-        void NewResponseJson(ResponseCsv data, string apino);
+        void NewResponseJson(ResponseCsv data, string apino, string outputpath);
         IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2);
     }
 }

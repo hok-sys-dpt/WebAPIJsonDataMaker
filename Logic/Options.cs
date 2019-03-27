@@ -16,5 +16,8 @@ namespace WebAPIJsonDataMaker.Logic
         
         [Option('l', "listfile", Required = false, HelpText = "明細ファイル　反復項目がある場合のみ指定して下さい")] 
         public string file2Name { get; set; }
+
+        [Option('o', "outputpath", Required = true, HelpText = "ファイル出力先の絶対パス")] 
+        public string outputpath { get; set; }
     }
 }

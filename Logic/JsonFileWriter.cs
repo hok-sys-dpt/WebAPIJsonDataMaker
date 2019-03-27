@@ -7,12 +7,12 @@ namespace WebAPIJsonDataMaker.Logic
 {
     public class JsonFileWriter
     {
-        public void New(object model, int fileId, string apino, string reqOrRes)
+        public void New(object model, int fileId, string apino, string reqOrRes, string outputpath)
         {
             TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
 
             var jsondata = JsonConvert.SerializeObject(model, Formatting.Indented);
-            StreamWriter writer = new StreamWriter($"出力データ/{apino}/{reqOrRes}/{apino}{myTI.ToTitleCase(reqOrRes)}{fileId:D4}.json", false);
+            StreamWriter writer = new StreamWriter($"{outputpath}/{apino}{myTI.ToTitleCase(reqOrRes)}{fileId:D4}.json", false);
             writer.WriteLine(jsondata);
             writer.Close();
         }
