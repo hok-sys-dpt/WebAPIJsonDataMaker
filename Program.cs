@@ -20,7 +20,7 @@ namespace WebAPIJsonDataMaker
                     var reqOrRes = o.reqOrRes.ToLower();
                     if (reqOrRes == "request" || reqOrRes == "response")
                     {
-                        dc.newJsonData(o.apiNo, reqOrRes, o.file1Name, o.file2Name);
+                        dc.newJsonData(o.apiNo, reqOrRes, o.file1Name, o.file2Name, o.outputpath);
                         Console.WriteLine("\n 正常に終了しました");
                     }
                     else
