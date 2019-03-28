@@ -14,6 +14,7 @@ using WebAPIJsonDataMaker.Models.GW1019.Response;
 using WebAPIJsonDataMaker.Models.GW1025.Response;
 using WebAPIJsonDataMaker.Models.GW1016.Response;
 using WebAPIJsonDataMaker.Models.GW1018.Response;
+using WebAPIJsonDataMaker.Models.GW1006.Response;
 
 namespace WebAPIJsonDataMaker.Models.Common
 {
@@ -29,6 +30,7 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW1003ResponseCsv GW1003ResponseCsv { get; set; }
         public GW1004ResponseCsv GW1004ResponseCsv { get; set; }
         public GW1005ResponseCsv GW1005ResponseCsv { get; set; }
+        public GW1006ResponseCsv GW1006ResponseCsv { get; set; }
         public GW1007ResponseCsv GW1007ResponseCsv { get; set; }
         public GW1012ResponseCsv GW1012ResponseCsv { get; set; }
         public GW1019ResponseCsv GW1019ResponseCsv  { get; set; }
