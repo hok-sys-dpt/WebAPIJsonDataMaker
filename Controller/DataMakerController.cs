@@ -46,6 +46,43 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //Gw0021振替
+                case "GW0021":
+                    {
+                        IGWLogic iGWLogic = new GW0021Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //Gw0024定期預金追加預入
+                case "GW0024":
+                    {
+                        IGWLogic iGWLogic = new GW0024Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //Gw0025積立定期預金追加預入
+                case "GW0025":
+                    {
+                        IGWLogic iGWLogic = new GW0025Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW0026定期預金預入明細照会
+                case "GW0026":
+                    {
+                        IGWLogic iGWLogic = new GW0026Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
                 //Gw0057振込予約実行
                 case "GW0057":
                     {
@@ -138,6 +175,22 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //GW1008法人IB入出金明細照会
+                case "GW1008":
+                    {
+                        IGWLogic iGWLogic = new GW1008Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
                 //GW1012専用当座貸越実行
                 case "GW1012":
                     {
@@ -149,6 +202,13 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1019":
                     {
                         IGWLogic iGWLogic = new GW1019Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1024定期預金受付状況照会
+                case "GW1024":
+                    {
+                        IGWLogic iGWLogic = new GW1024Logic();
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
