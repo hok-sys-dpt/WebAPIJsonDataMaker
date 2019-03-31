@@ -9,6 +9,12 @@ using WebAPIJsonDataMaker.Models.GW1003.Response;
 using WebAPIJsonDataMaker.Models.GW1004.Response;
 using WebAPIJsonDataMaker.Models.GW1005.Response;
 using WebAPIJsonDataMaker.Models.GW1007.Response;
+using WebAPIJsonDataMaker.Models.GW1008.Response;
+using WebAPIJsonDataMaker.Models.GW0021.Response;
+using WebAPIJsonDataMaker.Models.GW0024.Response;
+using WebAPIJsonDataMaker.Models.GW0025.Response;
+using WebAPIJsonDataMaker.Models.GW0026.Response;
+using WebAPIJsonDataMaker.Models.GW1024.Response;
 using WebAPIJsonDataMaker.Models.GW1012.Response;
 using WebAPIJsonDataMaker.Models.GW1019.Response;
 using WebAPIJsonDataMaker.Models.GW1025.Response;
@@ -32,6 +38,12 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW1005ResponseCsv GW1005ResponseCsv { get; set; }
         public GW1006ResponseCsv GW1006ResponseCsv { get; set; }
         public GW1007ResponseCsv GW1007ResponseCsv { get; set; }
+        public GW1008ResponseCsv GW1008ResponseCsv { get; set; }
+        public GW0021ResponseCsv GW0021ResponseCsv { get; set; }
+        public GW0024ResponseCsv GW0024ResponseCsv { get; set; }
+        public GW0025ResponseCsv GW0025ResponseCsv { get; set; }
+        public GW0026ResponseCsv GW0026ResponseCsv { get; set; }
+        public GW1024ResponseCsv GW1024ResponseCsv { get; set; }
         public GW1012ResponseCsv GW1012ResponseCsv { get; set; }
         public GW1019ResponseCsv GW1019ResponseCsv  { get; set; }
         public GW1025ResponseCsv GW1025ResponseCsv  { get; set; }
