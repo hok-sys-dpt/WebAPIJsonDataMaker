@@ -32,6 +32,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //Gw0013専用当座貸越異例返済
+                case "GW1013":
+                    {
+                        IGWLogic iGWLogic = new GW1013Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //Gw0019振込先口座照会
                 case "GW0019":
                     {
