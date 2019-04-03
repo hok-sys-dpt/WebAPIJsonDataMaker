@@ -5,6 +5,6 @@
     public class ResponseMessageData
     {
         public WisResponseSystemInfo WisResponseSystemInfo { get; set; }
-        public GaikokukawasesobaIchiranShokai GaikokukawasesobaIchiranShokai;
+        public GaikokukawasesobaIchiranShokai GaikokukawasesobaIchiranShokai { get; set; }
     }
 }
