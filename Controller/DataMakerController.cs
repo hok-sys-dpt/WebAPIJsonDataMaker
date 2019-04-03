@@ -83,6 +83,20 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //GW0043ＭＰＮ収納機関要否照会
+                case "GW0043":
+                    {
+                        IGWLogic iGWLogic = new GW0043Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW0045ＭＰＮ収納機関要否照会
+                case "GW0045":
+                    {
+                        IGWLogic iGWLogic = new GW0045Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //Gw0057振込予約実行
                 case "GW0057":
                     {
@@ -198,6 +212,7 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+
                 //GW1019専用当座貸越借入内容照会
                 case "GW1019":
                     {
