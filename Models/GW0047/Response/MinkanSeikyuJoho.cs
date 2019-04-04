@@ -1,0 +1,19 @@
+﻿namespace WebAPIJsonDataMaker.Models.GW0047.Response
+{
+    public class MinkanSeikyuJoho
+    {
+        public int minkanSeikyuNaiyoHyojiKubun { get; set; }
+        public string minkanSeikyuNaiyoKana { get; set; }
+        public string minkanSeikyuNaiyoKanji { get; set; }
+        public long minkanHaraikomiGokeiKingaku { get; set; }
+        public long minkanSeikyuGokeiKingaku { get; set; }
+        public long minkanSeikyuKingaku { get; set; }
+        public string minkanSeikyuBango { get; set; }
+        public int minkanShohizeigakuHyojiKubun { get; set; }
+        public long minkanShohizei { get; set; }
+        public int minkanEntaikinHyojiKubun { get; set; }
+        public int minkanEntaikin { get; set; }
+        public int minkanTesuryoHyojiKubun { get; set; }
+        public long minkanRiyoshaHutanTesuryo { get; set; }
+    }
+}

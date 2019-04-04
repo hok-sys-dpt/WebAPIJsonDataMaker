@@ -90,6 +90,13 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //Gw0047MPN情報リンク表示項目照会
+                case "GW0047":
+                    {
+                        IGWLogic iGWLogic = new GW0047Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //Gw0057振込予約実行
                 case "GW0057":
                     {
@@ -256,6 +263,13 @@ namespace WebAPIJsonDataMaker.Controller
                             var csv2 = new CsvReader(reader2);
                             newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
                         }
+                        break;
+                    }
+                //Gw1027MPN状況照会
+                case "GW1027":
+                    {
+                        IGWLogic iGWLogic = new GW1027Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
                 //上記以外のAPI
