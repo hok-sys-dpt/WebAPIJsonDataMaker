@@ -1,8 +1,6 @@
-using WebAPIJsonDataMaker.Models.GW1018;
-
 namespace WebAPIJsonDataMaker.Models.GW1018.Request
 {
-    public class SenyotozakashikoshiYoyakuMeisaiShokai
+    public class SenyotozakashikoshiYoyakuMeisaiShokai : IKurikaeshiSeigyo
     {
         public int keiyakushaId { get; set; }
         public int riyoshaId { get; set; }
