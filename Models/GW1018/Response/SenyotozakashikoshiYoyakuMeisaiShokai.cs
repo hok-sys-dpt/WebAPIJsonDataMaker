@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-
 namespace WebAPIJsonDataMaker.Models.GW1018.Response
 {
-    public class SenyotozakashikoshiYoyakuMeisaiShokai
+    public class SenyotozakashikoshiYoyakuMeisaiShokai : IKurikaeshiSeigyo
     {
         public string shoribi { get; set; }
         public string shoriJikoku { get; set; }
