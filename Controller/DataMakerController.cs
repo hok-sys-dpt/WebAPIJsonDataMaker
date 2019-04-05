@@ -25,6 +25,7 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+
                 //Gw0012外貨預金残高照会
                 case "GW0012":
                     {
@@ -32,11 +33,20 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
-                //Gw0013専用当座貸越異例返済
-                case "GW1013":
+                //Gw0013外貨預金入出金明細照会
+                case "GW0013":
                     {
-                        IGWLogic iGWLogic = new GW1013Logic();
-                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        IGWLogic iGWLogic = new GW0013Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
                         break;
                     }
                 //Gw0019振込先口座照会
@@ -242,6 +252,10 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //GW1013専用当座貸越異例返済
+                case "GW1013":
+                    {
+                        IGWLogic iGWLogic = new GW1013Logic();
                 //GW1014専用当座貸越実行予約
                 case "GW1014":
                     {
