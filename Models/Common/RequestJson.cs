@@ -2,7 +2,6 @@ using WebAPIJsonDataMaker.Models.GW0008.Request;
 using WebAPIJsonDataMaker.Models.GW0012.Request;
 using WebAPIJsonDataMaker.Models.GW0019.Request;
 using WebAPIJsonDataMaker.Models.GW0020.Request;
-using WebAPIJsonDataMaker.Models.GW0043.Request;
 using WebAPIJsonDataMaker.Models.GW0045.Request;
 using WebAPIJsonDataMaker.Models.GW0057.Request;
 using WebAPIJsonDataMaker.Models.GW1001.Request;
@@ -33,7 +32,6 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW0019RequestJson GW0019RequestJson { get; set; }
         public GW0057RequestJson GW0057RequestJson { get; set; }
         public GW0020RequestJson GW0020RequestJson { get; set; }
-        public GW0043RequestJson GW0043RequestJson { get; set; }
         public GW0045RequestJson GW0045RequestJson { get; set; }
         public GW1001RequestJson GW1001RequestJson { get; set; }
         public GW1002RequestJson GW1002RequestJson { get; set; }
