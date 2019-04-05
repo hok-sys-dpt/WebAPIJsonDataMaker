@@ -3,6 +3,7 @@ using WebAPIJsonDataMaker.Models.GW0012.Request;
 using WebAPIJsonDataMaker.Models.GW0019.Request;
 using WebAPIJsonDataMaker.Models.GW0020.Request;
 using WebAPIJsonDataMaker.Models.GW0021.Request;
+using WebAPIJsonDataMaker.Models.GW0022.Request;
 using WebAPIJsonDataMaker.Models.GW0024.Request;
 using WebAPIJsonDataMaker.Models.GW0025.Request;
 using WebAPIJsonDataMaker.Models.GW0026.Request;
@@ -22,6 +23,7 @@ using WebAPIJsonDataMaker.Models.GW1016.Request;
 using WebAPIJsonDataMaker.Models.GW1018.Request;
 using WebAPIJsonDataMaker.Models.GW1024.Request;
 using WebAPIJsonDataMaker.Models.GW1025.Request;
+using WebAPIJsonDataMaker.Models.GW1026.Request;
 
 namespace WebAPIJsonDataMaker.Models.Common
 {
@@ -32,6 +34,7 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW0019RequestCsv GW0019RequestCsv { get; set; }
         public GW0020RequestCsv GW0020RequestCsv { get; set; } 
         public GW0021RequestCsv GW0021RequestCsv { get; set; }
+        public GW0022RequestCsv GW0022RequestCsv { get; set; }
         public GW0024RequestCsv GW0024RequestCsv { get; set; }
         public GW0025RequestCsv GW0025RequestCsv { get; set; }
         public GW0026RequestCsv GW0026RequestCsv { get; set; }
@@ -51,5 +54,6 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW1018RequestCsv GW1018RequestCsv { get; set; }
         public GW1024RequestCsv GW1024RequestCsv { get; set; }
         public GW1025RequestCsv GW1025RequestCsv { get; set; }
+        public GW1026RequestCsv GW1026RequestCsv { get; set; }
     }
 }
