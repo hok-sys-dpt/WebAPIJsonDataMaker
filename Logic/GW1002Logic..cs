@@ -82,5 +82,10 @@ namespace WebAPIJsonDataMaker.Logic
         {
             throw new System.NotImplementedException();
         }
+        
+        public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2 ,CsvReader csv3)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

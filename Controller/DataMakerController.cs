@@ -9,7 +9,7 @@ namespace WebAPIJsonDataMaker.Controller
 {
     public class DataMakerController
     {
-        public void newJsonData(string apino, string reqOrRes, string path1, string path2, string outputpath)
+        public void newJsonData(string apino, string reqOrRes, string path1, string path2, string path3, string outputpath)
         {
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -25,7 +25,24 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
-
+                //GW0011外貨預金金利照会
+                case "GW0011":
+                    {
+                        IGWLogic iGWLogic = new GW0011Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var reader3 = new StreamReader(path3, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            var csv3 = new CsvReader(reader3);
+                            newListData2(iGWLogic, csv, csv2, csv3, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
                 //Gw0012外貨預金残高照会
                 case "GW0012":
                     {
@@ -139,7 +156,11 @@ namespace WebAPIJsonDataMaker.Controller
                         else
                         {
                             var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            // var reader3 = new StreamReader(path3, Encoding.GetEncoding("shift-jis"));
+                            // var reader4 = new StreamReader(path4, Encoding.GetEncoding("shift-jis"));
                             var csv2 = new CsvReader(reader2);
+                            // var csv3 = new CsvReader(reader3);
+                            // var csv4 = new CsvReader(reader4);
                             newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
                         }
                         break;
@@ -445,6 +466,25 @@ namespace WebAPIJsonDataMaker.Controller
             else
             {
                 var csvModel = iGWLogic.ReadCsvResponse(csv, csv2);
+                foreach (ResponseCsv data in csvModel)
+                {
+                    iGWLogic.NewResponseJson(data, apino, outputpath);
+                    i++;
+                }
+            }
+            Console.WriteLine($"{i}件のファイルを出力しました");
+        }
+
+        public void newListData2(IGWLogic iGWLogic, CsvReader csv, CsvReader csv2, CsvReader csv3, string apino, string reqOrRes, string outputpath)
+        {
+            int i = 0;
+            if (reqOrRes == "request")
+            {
+                throw new InvalidDataException();
+            }
+            else
+            {
+                var csvModel = iGWLogic.ReadCsvResponse(csv, csv2,csv3);
                 foreach (ResponseCsv data in csvModel)
                 {
                     iGWLogic.NewResponseJson(data, apino, outputpath);

@@ -1,4 +1,5 @@
 using WebAPIJsonDataMaker.Models.GW0008.Response;
+using WebAPIJsonDataMaker.Models.GW0011.Response;
 using WebAPIJsonDataMaker.Models.GW0012.Response;
 using WebAPIJsonDataMaker.Models.GW0013.Response;
 using WebAPIJsonDataMaker.Models.GW0019.Response;
@@ -45,6 +46,7 @@ namespace WebAPIJsonDataMaker.Models.Common
     public class ResponseCsv
     {
         public GW0008ResponseCsv GW0008ResponseCsv { get; set; }
+        public GW0011ResponseCsv GW0011ResponseCsv { get; set; }
         public GW0012ResponseCsv GW0012ResponseCsv { get; set; }
         public GW0013ResponseCsv GW0013ResponseCsv { get; set; }
         public GW0019ResponseCsv GW0019ResponseCsv { get; set; }
