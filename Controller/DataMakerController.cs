@@ -100,6 +100,11 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //GW0045ＭＰＮ収納機関要否照会
+                case "GW0045":
+                    {
+                        IGWLogic iGWLogic = new GW0045Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                 //GW0043MPN請求情報照会
                 case "GW0043":
                     {
