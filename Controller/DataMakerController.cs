@@ -105,6 +105,8 @@ namespace WebAPIJsonDataMaker.Controller
                     {
                         IGWLogic iGWLogic = new GW0045Logic();
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //GW0043MPN請求情報照会
                 case "GW0043":
                     {
@@ -261,6 +263,9 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1013":
                     {
                         IGWLogic iGWLogic = new GW1013Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //GW1014専用当座貸越実行予約
                 case "GW1014":
                     {
