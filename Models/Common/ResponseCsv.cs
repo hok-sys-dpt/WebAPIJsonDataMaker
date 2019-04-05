@@ -75,10 +75,8 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW1024ResponseCsv GW1024ResponseCsv { get; set; }
         public GW1025ResponseCsv GW1025ResponseCsv  { get; set; }
         public GW1027ResponseCsv GW1027ResponseCsv  { get; set; }
-        public GW1025ResponseCsv GW1025ResponseCsv { get; set; }
         public GW1026ResponseCsv GW1026ResponseCsv { get; set; }
         public GW1028ResponseCsv GW1028ResponseCsv { get; set; }
-        public GW1025ResponseCsv GW1025ResponseCsv { get; set; }
         public GW1009ResponseCsv GW1009ResponseCsv { get; set; }
         public GW1010ResponseCsv GW1010ResponseCsv { get; set; }
         public GW1011ResponseCsv GW1011ResponseCsv { get; set; }
