@@ -100,6 +100,22 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //GW0043MPN請求情報照会
+                case "GW0043":
+                    {
+                        IGWLogic iGWLogic = new GW0043Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
                 //Gw0057振込予約実行
                 case "GW0057":
                     {
@@ -208,6 +224,27 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //GW1009法人IB入金通知情報更新
+                case "GW1009":
+                    {
+                        IGWLogic iGWLogic = new GW1009Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1010法人IB利用者情報変更
+                case "GW1010":
+                    {
+                        IGWLogic iGWLogic = new GW1010Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1011法人IB利用口座権限変更
+                case "GW1011":
+                    {
+                        IGWLogic iGWLogic = new GW1011Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //GW1012専用当座貸越実行
                 case "GW1012":
                     {
@@ -219,6 +256,24 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1013":
                     {
                         IGWLogic iGWLogic = new GW1013Logic();
+                //GW1014専用当座貸越実行予約
+                case "GW1014":
+                    {
+                        IGWLogic iGWLogic = new GW1014Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1015専用当座貸越回収予約
+                case "GW1015":
+                    {
+                        IGWLogic iGWLogic = new GW1015Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1017専用当座貸越計算書照会
+                case "GW1017":
+                    {
+                        IGWLogic iGWLogic = new GW1017Logic();
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
@@ -226,6 +281,29 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1019":
                     {
                         IGWLogic iGWLogic = new GW1019Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1022外国為替相場一覧照会
+                case "GW1022":
+                    {
+                        IGWLogic iGWLogic = new GW1022Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
+                //GW1023個社別外国為替相場照会
+                case "GW1023":
+                    {
+                        IGWLogic iGWLogic = new GW1023Logic();
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }

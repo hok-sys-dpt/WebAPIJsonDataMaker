@@ -7,6 +7,7 @@ using WebAPIJsonDataMaker.Models.GW0021.Request;
 using WebAPIJsonDataMaker.Models.GW0024.Request;
 using WebAPIJsonDataMaker.Models.GW0025.Request;
 using WebAPIJsonDataMaker.Models.GW0026.Request;
+using WebAPIJsonDataMaker.Models.GW0043.Request;
 using WebAPIJsonDataMaker.Models.GW0057.Request;
 using WebAPIJsonDataMaker.Models.GW1001.Request;
 using WebAPIJsonDataMaker.Models.GW1002.Request;
@@ -16,11 +17,19 @@ using WebAPIJsonDataMaker.Models.GW1005.Request;
 using WebAPIJsonDataMaker.Models.GW1006.Request;
 using WebAPIJsonDataMaker.Models.GW1007.Request;
 using WebAPIJsonDataMaker.Models.GW1008.Request;
+using WebAPIJsonDataMaker.Models.GW1009.Request;
+using WebAPIJsonDataMaker.Models.GW1010.Request;
+using WebAPIJsonDataMaker.Models.GW1011.Request;
 using WebAPIJsonDataMaker.Models.GW1012.Request;
 using WebAPIJsonDataMaker.Models.GW1013.Request;
+using WebAPIJsonDataMaker.Models.GW1014.Request;
+using WebAPIJsonDataMaker.Models.GW1015.Request;
 using WebAPIJsonDataMaker.Models.GW1019.Request;
 using WebAPIJsonDataMaker.Models.GW1016.Request;
+using WebAPIJsonDataMaker.Models.GW1017.Request;
 using WebAPIJsonDataMaker.Models.GW1018.Request;
+using WebAPIJsonDataMaker.Models.GW1022.Request;
+using WebAPIJsonDataMaker.Models.GW1023.Request;
 using WebAPIJsonDataMaker.Models.GW1024.Request;
 using WebAPIJsonDataMaker.Models.GW1025.Request;
 
@@ -53,5 +62,14 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW1018RequestJson GW1018RequestJson { get; set; }
         public GW1024RequestJson GW1024RequestJson { get; set; }
         public GW1025RequestJson GW1025RequestJson { get; set; }
+        public GW0043RequestJson GW0043RequestJson { get; set; }
+        public GW1009RequestJson GW1009RequestJson { get; set; }
+        public GW1010RequestJson GW1010RequestJson { get; set; }
+        public GW1011RequestJson GW1011RequestJson { get; set; }
+        public GW1014RequestJson GW1014RequestJson { get; set; }
+        public GW1015RequestJson GW1015RequestJson { get; set; }
+        public GW1017RequestJson GW1017RequestJson { get; set; }
+        public GW1022RequestJson GW1022RequestJson { get; set; }
+        public GW1023RequestJson GW1023RequestJson { get; set; }
     }
 }
