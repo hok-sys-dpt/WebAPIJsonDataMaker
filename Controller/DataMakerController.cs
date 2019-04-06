@@ -315,6 +315,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //GW1021法人IBパスワード認証
+                case "GW1021":
+                    {
+                        IGWLogic iGWLogic = new GW1021Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //GW1022外国為替相場一覧照会
                 case "GW1022":
                     {
