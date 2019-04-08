@@ -107,6 +107,17 @@ namespace WebAPIJsonDataMaker.Controller
                         }
                         break;
                     }
+                //Gw0029定期預金支払
+                case "GW0029":
+                    {
+                        IGWLogic iGWLogic = new GW0029Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //Gw0030積立定期預金支払
+                case "GW0030":
+                    {
+                        IGWLogic iGWLogic = new GW0030Logic();
                 //Gw0047MPN情報リンク表示項目照会
                 case "GW0047":
                     {
