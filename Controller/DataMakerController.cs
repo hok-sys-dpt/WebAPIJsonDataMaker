@@ -118,6 +118,9 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW0030":
                     {
                         IGWLogic iGWLogic = new GW0030Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //Gw0047MPN情報リンク表示項目照会
                 case "GW0047":
                     {
