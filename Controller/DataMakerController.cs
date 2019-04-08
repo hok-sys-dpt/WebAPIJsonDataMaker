@@ -70,6 +70,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //Gw0022振替
+                case "GW0022":
+                    {
+                        IGWLogic iGWLogic = new GW0022Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //Gw0024定期預金追加預入
                 case "GW0024":
                     {
@@ -111,6 +118,24 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW0030":
                     {
                         IGWLogic iGWLogic = new GW0030Logic();
+                //Gw0047MPN情報リンク表示項目照会
+                case "GW0047":
+                    {
+                        IGWLogic iGWLogic = new GW0047Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //Gw0044MPN収納依頼
+                case "GW0044":
+                    {
+                        IGWLogic iGWLogic = new GW0044Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW0045ＭＰＮ収納機関要否照会
+                case "GW0045":
+                    {
+                        IGWLogic iGWLogic = new GW0045Logic();
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
@@ -301,6 +326,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //GW1021法人IBパスワード認証
+                case "GW1021":
+                    {
+                        IGWLogic iGWLogic = new GW1021Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //GW1022外国為替相場一覧照会
                 case "GW1022":
                     {
@@ -338,6 +370,13 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //GW1026B振込振替状況照会
+                case "GW1026":
+                    {
+                        IGWLogic iGWLogic = new GW1026Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
                 //GW1016専用当座貸越取引明細照会
                 case "GW1016":
                     {
@@ -368,6 +407,20 @@ namespace WebAPIJsonDataMaker.Controller
                             var csv2 = new CsvReader(reader2);
                             newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
                         }
+                        break;
+                    }
+                //Gw1027MPN状況照会
+                case "GW1027":
+                    {
+                        IGWLogic iGWLogic = new GW1027Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW1028法人IB予約取消
+                case "GW1028":
+                    {
+                        IGWLogic iGWLogic = new GW1028Logic();
+                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
                 //上記以外のAPI
