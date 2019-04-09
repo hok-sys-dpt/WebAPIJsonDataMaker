@@ -12,6 +12,6 @@
         public string shinaikyokuban { get; set; }
         public string okyakusamaBango { get; set; }
         public string mailaddress { get; set; }
-        public string dmKubun { get; set; }
+        public int dmKubun { get; set; }
     }
 }
