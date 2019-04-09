@@ -7,8 +7,6 @@ namespace WebAPIJsonDataMaker.Models.GW1005.Response
     {
         public string shoribi { get; set; }
         public string shoriJikoku { get; set; }
-        public int keiyakushaId { get; set; }
-        public int riyoshaId { get; set; }
         public KurikaeshiSeigyo KurikaeshiSeigyo { get; set; }
         public int otoKensu { get; set; }
         public ItakushaJoho[] ItakushaJoho { get; set; }

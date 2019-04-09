@@ -4,12 +4,9 @@
     {
         public string shoribi { get; set; }
         public string shoriJikoku { get; set; }
-        public int keiyakushaId { get; set; }
-        public long orgId { get; set; }
         public int temban { get; set; }
         public int kamokuCode { get; set; }
         public int kozabango { get; set; }
-        public long kanrenOrgId { get; set; }
         public int karenTemban { get; set; }
         public int kanrenKamokuCode { get; set; }
         public int kanrenKozabango { get; set; }
