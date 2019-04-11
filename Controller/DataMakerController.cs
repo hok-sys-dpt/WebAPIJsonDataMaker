@@ -477,7 +477,12 @@ namespace WebAPIJsonDataMaker.Controller
             int i = 0;
             if (reqOrRes == "request")
             {
-                throw new InvalidDataException();
+                var csvModel = iGWLogic.ReadCsvRequest(csv, csv2);
+                foreach (RequestCsv data in csvModel)
+                {
+                    iGWLogic.NewRequestJson(data, apino, outputpath);
+                    i++;
+                }
             }
             else
             {
