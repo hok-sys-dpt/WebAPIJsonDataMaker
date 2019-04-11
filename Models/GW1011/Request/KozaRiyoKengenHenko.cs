@@ -6,7 +6,17 @@
         public int riyoshaId { get; set; }
         public int shoriKubun { get; set; }
         public int kakuninJikkoKubun { get; set; }
-        public int kozaKengenKubun { get; set; }
-        public long orgId { get; set; }
+        public KoshinKoza[] KoshinKoza;
+
+        public KozaRiyoKengenHenko()
+        {
+            const int MaxItemCount = 100;
+            KoshinKoza = new KoshinKoza[MaxItemCount];
+
+            for (int count = 0; count < MaxItemCount; count++)
+            {
+                KoshinKoza[count] = new KoshinKoza();
+            }
+        }
     }
 }
