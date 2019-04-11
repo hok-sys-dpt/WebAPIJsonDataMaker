@@ -284,7 +284,16 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1011":
                     {
                         IGWLogic iGWLogic = new GW1011Logic();
-                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        if (reqOrRes == "request")
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
                         break;
                     }
                 //GW1012専用当座貸越実行

@@ -16,6 +16,10 @@ namespace WebAPIJsonDataMaker.Logic
                 yield return (new RequestCsv() { GW0012RequestCsv = data });
             }
         }
+        public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv, CsvReader csv2)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public void NewRequestJson(RequestCsv data, string apino, string outputpath)
         {

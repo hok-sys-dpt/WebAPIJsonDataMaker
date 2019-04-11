@@ -17,6 +17,11 @@ namespace WebAPIJsonDataMaker.Logic
             }
         }
 
+        public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv, CsvReader csv2)
+        {
+            throw new System.NotImplementedException();
+        }
+        
         public void NewRequestJson(RequestCsv data, string apino, string outputpath)
         {
             var outputData = new RequestJson()
