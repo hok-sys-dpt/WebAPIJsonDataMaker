@@ -9,6 +9,7 @@
         public int cifBango { get; set; }
         public int kamokuCode { get; set; }
         public int toriatsukaiBango { get; set; }
+        public int torokuKubun { get; set; }
         public int jikkoKubun { get; set; }
         public string kariireShiteibi { get; set; }
         public long kariireKingaku { get; set; }
