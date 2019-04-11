@@ -11,5 +11,6 @@
         public int shukkinCifBango { get; set; }
         public string shukkinKozameigiKana { get; set; }
         public string shukkinKozameigiKanji { get; set; }
+        public int shukkinKozaIkanYomikaeHyoji { get; set; }
     }
 }

@@ -9,7 +9,6 @@
         public string uketorininShitenmeiKana { get; set; }
         public string uketorininShitenmeiKanji { get; set; }
         public int uketorininKamokuCode { get; set; }
-        public string uketorininKamokumei { get; set; }
         public int uketorininKozabango { get; set; }
         public string uketorininmeiKana { get; set; }
     }

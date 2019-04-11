@@ -2,6 +2,12 @@
 {
     public class TorihikiShosaiJoho
     {
+        public string hurikaebi { get; set; }
+        public long kingaku { get; set; }
+        public string torihikiShoribi { get; set; }
+        public string torihikiShorijikoku { get; set; }
+        public string torikeshibi { get; set; }
+        public string torikeshiJikoku { get; set; }
         public string hurikomiShiteibi { get; set; }
         public long hurikomiKingaku { get; set; }
         public long tesuryoKingaku { get; set; }
