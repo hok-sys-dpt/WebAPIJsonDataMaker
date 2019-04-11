@@ -4,7 +4,6 @@
     {
         public string shoribi { get; set; }
         public string shoriJikoku { get; set; }
-        public int keiyakushaId { get; set; }
         public int otoKensu { get; set; }
         public SobaJoho[] SobaJoho { get; set; }
 

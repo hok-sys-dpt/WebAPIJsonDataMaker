@@ -7,6 +7,5 @@
         public int kozabango { get; set; }
         public string tenmeiKana { get; set; }
         public string tenmeiKanji { get; set; }
-        public string kamokumeiKanji { get; set; }
     }
 }

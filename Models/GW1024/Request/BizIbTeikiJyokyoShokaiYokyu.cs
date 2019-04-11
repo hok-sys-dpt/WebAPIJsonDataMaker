@@ -3,6 +3,6 @@
     public class BizIbTeikiJyokyoShokai
     {
         public int keiyakushaId { get; set; }
-        public int clientTracdId { get; set; }
+        public string clientTracdId { get; set; }
     }
 }

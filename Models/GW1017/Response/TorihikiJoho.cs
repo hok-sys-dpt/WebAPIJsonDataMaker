@@ -8,7 +8,7 @@
         public string yushigaku { get; set; }
         public string hensaiKijitsu { get; set; }
         public string toriatsukaibi { get; set; }
-        public int gankinKingaku { get; set; }
+        public long gankinKingaku { get; set; }
         public string kijitsu { get; set; }
         public long torihikigoZandaka { get; set; }
         public long hensaigakuGokei { get; set; }

@@ -29,5 +29,26 @@
         public ShukkinKoza ShukkinKoza { get; set; }
         public KensaKomoku KensaKomoku { get; set; }
         public int saishuShunoIraiFlag { get; set; }
+        
+        public MpnShunoIrai()
+        {
+
+            ChannelJoho = new ChannelJoho();
+            HishimukeCenterCode = new HishimukeCenterCode();
+            MinkanSeikyuJoho = new MinkanSeikyuJoho();
+            ChikotaiNohuJoho = new ChikotaiNohuJoho();
+            KokkokinNohuJoho = new KokkokinNohuJoho();
+            ShukkinKoza = new ShukkinKoza();
+            KensaKomoku = new KensaKomoku();
+
+            const int MaxItemCount = 2;
+
+            HosutoShoriTsubanJoho = new HosutoShoriTsubanJoho[MaxItemCount];
+
+            for (int count = 0; count < MaxItemCount; count++)
+            {
+                HosutoShoriTsubanJoho[count] = new HosutoShoriTsubanJoho();
+            }
+        }
     }
 }
