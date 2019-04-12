@@ -1,4 +1,5 @@
 using WebAPIJsonDataMaker.Models.GW0008.Response;
+using WebAPIJsonDataMaker.Models.GW0011.Response;
 using WebAPIJsonDataMaker.Models.GW0012.Response;
 using WebAPIJsonDataMaker.Models.GW0013.Response;
 using WebAPIJsonDataMaker.Models.GW0019.Response;
@@ -10,6 +11,7 @@ using WebAPIJsonDataMaker.Models.GW0025.Response;
 using WebAPIJsonDataMaker.Models.GW0026.Response;
 using WebAPIJsonDataMaker.Models.GW0029.Response;
 using WebAPIJsonDataMaker.Models.GW0030.Response;
+using WebAPIJsonDataMaker.Models.GW0031.Response;
 using WebAPIJsonDataMaker.Models.GW0047.Response;
 using WebAPIJsonDataMaker.Models.GW0044.Response;
 using WebAPIJsonDataMaker.Models.GW0043.Response;
@@ -38,10 +40,10 @@ using WebAPIJsonDataMaker.Models.GW1020.Response;
 using WebAPIJsonDataMaker.Models.GW1022.Response;
 using WebAPIJsonDataMaker.Models.GW1023.Response;
 using WebAPIJsonDataMaker.Models.GW1024.Response;
+using WebAPIJsonDataMaker.Models.GW1025.Response;
 using WebAPIJsonDataMaker.Models.GW1027.Response;
 using WebAPIJsonDataMaker.Models.GW1026.Response;
 using WebAPIJsonDataMaker.Models.GW1028.Response;
-using WebAPIJsonDataMaker.Models.GW1025.Response;
 using WebAPIJsonDataMaker.Models.GW1021.Response;
 
 namespace WebAPIJsonDataMaker.Models.Common
@@ -49,6 +51,7 @@ namespace WebAPIJsonDataMaker.Models.Common
     public class ResponseCsv
     {
         public GW0008ResponseCsv GW0008ResponseCsv { get; set; }
+        public GW0011ResponseCsv GW0011ResponseCsv { get; set; }
         public GW0012ResponseCsv GW0012ResponseCsv { get; set; }
         public GW0013ResponseCsv GW0013ResponseCsv { get; set; }
         public GW0019ResponseCsv GW0019ResponseCsv { get; set; }
@@ -60,6 +63,7 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW0026ResponseCsv GW0026ResponseCsv { get; set; }
         public GW0029ResponseCsv GW0029ResponseCsv { get; set; }
         public GW0030ResponseCsv GW0030ResponseCsv { get; set; }
+        public GW0031ResponseCsv GW0031ResponseCsv { get; set; }
         public GW0047ResponseCsv GW0047ResponseCsv { get; set; }
         public GW0044ResponseCsv GW0044ResponseCsv { get; set; }
         public GW0043ResponseCsv GW0043ResponseCsv { get; set; }

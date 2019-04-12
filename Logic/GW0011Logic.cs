@@ -1,23 +1,23 @@
 using System.Collections.Generic;
 using CsvHelper;
 using WebAPIJsonDataMaker.Models.Common;
-using WebAPIJsonDataMaker.Models.GW0043.Response;
-using WebAPIJsonDataMaker.Models.GW0043;
+using WebAPIJsonDataMaker.Models.GW0011.Response;
+using WebAPIJsonDataMaker.Models.GW0011;
 using System.Linq;
 using Newtonsoft.Json;
 using System;
-using WebAPIJsonDataMaker.Models.GW0043.Request;
+using WebAPIJsonDataMaker.Models.GW0011.Request;
 
 namespace WebAPIJsonDataMaker.Logic
 {
-    public class GW0043Logic : IGWLogic
+    public class GW0011Logic : IGWLogic
     {
         public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv)
         {
-            var records = csv.GetRecords<GW0043RequestCsv>();
-            foreach (GW0043RequestCsv data in records)
+            var records = csv.GetRecords<GW0011RequestCsv>();
+            foreach (GW0011RequestCsv data in records)
             {
-                yield return (new RequestCsv() { GW0043RequestCsv = data });
+                yield return (new RequestCsv() { GW0011RequestCsv = data });
             }
         }
 
@@ -30,35 +30,35 @@ namespace WebAPIJsonDataMaker.Logic
         {
             var outputData = new RequestJson()
             {
-                GW0043RequestJson = new GW0043RequestJson()
+                GW0011RequestJson = new GW0011RequestJson()
                 {
-                    FileNo = data.GW0043RequestCsv.FileId,
+                    FileNo = data.GW0011RequestCsv.FileId,
                     RequestMessageData = new RequestMessageData()
                     {
                         WisRequestSystemInfo = new WisRequestSystemInfo(),
-                        MpnSeikyujohoShokai = data.GW0043RequestCsv.MpnSeikyujohoShokai
+                        GaikokuYokinKinriShoukai = data.GW0011RequestCsv.GaikokuYokinKinriShoukai
                     }
                 }
             };
             var jf = new JsonFileWriter();
-            jf.New(outputData.GW0043RequestJson.RequestMessageData, outputData.GW0043RequestJson.FileNo, apino, "Request", outputpath);
+            jf.New(outputData.GW0011RequestJson.RequestMessageData, outputData.GW0011RequestJson.FileNo, apino, "Request", outputpath);
         }
 
         public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv, CsvReader csv2)
         {
-            var records = csv.GetRecords<GW0043ResponseCsv>();
+            var records = csv.GetRecords<GW0011ResponseCsv>();
 
-            foreach (GW0043ResponseCsv data in records)
+            foreach (GW0011ResponseCsv data in records)
             {
-                var records2 = csv2.GetRecords<MinkanSeikyuJoho>().ToArray();
+                var records2 = csv2.GetRecords<TeikiRiritsuKingakubetsu>().ToArray();
                 var model = new ResponseCsv()
                 {
-                    GW0043ResponseCsv = data
+                    GW0011ResponseCsv = data
                 };
                 var i = 0;
-                foreach (MinkanSeikyuJoho joho in records2)
+                foreach (TeikiRiritsuKingakubetsu koza in records2)
                 {
-                    model.GW0043ResponseCsv.MpnSeikyujohoShokai.MinkanSeikyuJoho[i] = joho;
+                    model.GW0011ResponseCsv.GaikokuYokinKinriShoukai.TeikiRiritsuJoho.TeikiRiritsuKingakubetsu[i] = koza;
                     i++;
                 }
                 yield return (model);
@@ -69,18 +69,18 @@ namespace WebAPIJsonDataMaker.Logic
         {
             var outputData = new ResponseJson()
             {
-                GW0043ResponseJson = new GW0043ResponseJson()
+                GW0011ResponseJson = new GW0011ResponseJson()
                 {
-                    FileNo = data.GW0043ResponseCsv.FileId,
+                    FileNo = data.GW0011ResponseCsv.FileId,
                     ResponseMessageData = new ResponseMessageData()
                     {
                         WisResponseSystemInfo = new WisResponseSystemInfo(),
-                        MpnSeikyujohoShokai = data.GW0043ResponseCsv.MpnSeikyujohoShokai
+                        GaikokuYokinKinriShoukai = data.GW0011ResponseCsv.GaikokuYokinKinriShoukai
                     }
                 }
             };
             var jf = new JsonFileWriter();
-            jf.New(outputData.GW0043ResponseJson.ResponseMessageData, outputData.GW0043ResponseJson.FileNo, apino, "Response", outputpath);
+            jf.New(outputData.GW0011ResponseJson.ResponseMessageData, outputData.GW0011ResponseJson.FileNo, apino, "Response", outputpath);
         }
 
         public IEnumerable<ResponseCsv> ReadCsvResponse(CsvReader csv)
