@@ -5,6 +5,6 @@ namespace WebAPIJsonDataMaker.Models.GW1002.Response
     public class ResponseMessageData
     {
         public WisResponseSystemInfo WisResponseSystemInfo { get; set; }
-        public BizIbRiyoukouzaShokai BizIbRiyoukouzaShokai { get; set; }
+        public BizIbRiyoukozaShokai BizIbRiyoukozaShokai { get; set; }
     }
 }

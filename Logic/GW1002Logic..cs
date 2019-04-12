@@ -36,7 +36,7 @@ namespace WebAPIJsonDataMaker.Logic
                     RequestMessageData = new RequestMessageData()
                     {
                         WisRequestSystemInfo = new WisRequestSystemInfo(),
-                        BizIbRiyoukouzaShokai = data.GW1002RequestCsv.BizIbRiyoukouzaShokai
+                        BizIbRiyoukozaShokai = data.GW1002RequestCsv.BizIbRiyoukozaShokai
                     }
                 }
             };
@@ -58,7 +58,7 @@ namespace WebAPIJsonDataMaker.Logic
                 var i = 0;
                 foreach (RiyoKozaJoho koza in records2)
                 {
-                    model.GW1002ResponseCsv.BizIbRiyoukouzaShokai.RiyoKozaJoho[i] = koza;
+                    model.GW1002ResponseCsv.BizIbRiyoukozaShokai.RiyoKozaJoho[i] = koza;
                     i++;
                 }
                 yield return (model);
@@ -75,7 +75,7 @@ namespace WebAPIJsonDataMaker.Logic
                     ResponseMessageData = new ResponseMessageData()
                     {
                         WisResponseSystemInfo = new WisResponseSystemInfo(),
-                        BizIbRiyoukouzaShokai = data.GW1002ResponseCsv.BizIbRiyoukouzaShokai
+                        BizIbRiyoukozaShokai = data.GW1002ResponseCsv.BizIbRiyoukozaShokai
                     }
                 }
             };
