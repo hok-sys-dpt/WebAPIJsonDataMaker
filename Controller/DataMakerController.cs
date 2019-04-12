@@ -132,7 +132,16 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW0044":
                     {
                         IGWLogic iGWLogic = new GW0044Logic();
-                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        if (reqOrRes == "request")
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
                         break;
                     }
                 //GW0045ＭＰＮ収納機関要否照会
@@ -284,7 +293,16 @@ namespace WebAPIJsonDataMaker.Controller
                 case "GW1011":
                     {
                         IGWLogic iGWLogic = new GW1011Logic();
-                        newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        if (reqOrRes == "request")
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
                         break;
                     }
                 //GW1012専用当座貸越実行
@@ -468,7 +486,12 @@ namespace WebAPIJsonDataMaker.Controller
             int i = 0;
             if (reqOrRes == "request")
             {
-                throw new InvalidDataException();
+                var csvModel = iGWLogic.ReadCsvRequest(csv, csv2);
+                foreach (RequestCsv data in csvModel)
+                {
+                    iGWLogic.NewRequestJson(data, apino, outputpath);
+                    i++;
+                }
             }
             else
             {

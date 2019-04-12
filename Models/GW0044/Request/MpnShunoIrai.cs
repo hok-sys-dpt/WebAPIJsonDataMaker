@@ -4,7 +4,6 @@
     {
         public ChannelJoho ChannelJoho { get; set; }
         public string seikyuJohoShokaiShoribi { get; set; }
-        public HosutoShoriTsubanJoho[] HosutoShoriTsubanJoho { get; set; }
         public HishimukeCenterCode HishimukeCenterCode { get; set; }
         public int shiharaiKeitai { get; set; }
         public string riyoshameiKana { get; set; }
@@ -29,9 +28,12 @@
         public ShukkinKoza ShukkinKoza { get; set; }
         public KensaKomoku KensaKomoku { get; set; }
         public int saishuShunoIraiFlag { get; set; }
-        
+        public HosutoShoriTsubanJoho[] HosutoShoriTsubanJoho { get; set; }
+
         public MpnShunoIrai()
         {
+
+            const int MaxItemCount = 2;
 
             ChannelJoho = new ChannelJoho();
             HishimukeCenterCode = new HishimukeCenterCode();
@@ -40,8 +42,6 @@
             KokkokinNohuJoho = new KokkokinNohuJoho();
             ShukkinKoza = new ShukkinKoza();
             KensaKomoku = new KensaKomoku();
-
-            const int MaxItemCount = 2;
 
             HosutoShoriTsubanJoho = new HosutoShoriTsubanJoho[MaxItemCount];
 

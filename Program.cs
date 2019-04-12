@@ -31,7 +31,7 @@ namespace WebAPIJsonDataMaker
             }
             catch (Exception e)
             {
-                Console.WriteLine("\n エラーが発生ました");
+                Console.WriteLine("\n エラーが発生しました");
                 Console.WriteLine(e.ToString());
             }
             finally

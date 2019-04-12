@@ -3,6 +3,9 @@ using CsvHelper;
 using WebAPIJsonDataMaker.Models.Common;
 using WebAPIJsonDataMaker.Models.GW1011.Request;
 using WebAPIJsonDataMaker.Models.GW1011.Response;
+using System.Linq;
+using Newtonsoft.Json;
+using System;
 
 namespace WebAPIJsonDataMaker.Logic
 {
@@ -10,11 +13,28 @@ namespace WebAPIJsonDataMaker.Logic
     {
         public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv)
         {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<RequestCsv> ReadCsvRequest(CsvReader csv, CsvReader csv2)
+        {
             var records = csv.GetRecords<GW1011RequestCsv>();
+
             foreach (GW1011RequestCsv data in records)
             {
-                yield return (new RequestCsv() { GW1011RequestCsv = data });
-            }
+                var records2 = csv2.GetRecords<KoshinKoza>().ToArray();
+                var model = new RequestCsv()
+                {
+                    GW1011RequestCsv = data
+                };
+                var i = 0;
+                foreach (KoshinKoza koza in records2)
+                {
+                    model.GW1011RequestCsv.KozaRiyoKengenHenko.KoshinKoza[i] = koza;
+                    i++;
+                }
+                yield return (model);
+            };
         }
 
         public void NewRequestJson(RequestCsv data, string apino, string outputpath)
