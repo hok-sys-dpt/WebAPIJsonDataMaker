@@ -13,5 +13,6 @@ namespace WebAPIJsonDataMaker.Models.GW1008.Request
         public string torihikibi{ get; set; }
         public int sequence{ get; set; }
         public KurikaeshiSeigyo KurikaeshiSeigyo { get; set; }
+        public int otoKensu { get; set; }
     }
 }

@@ -4,14 +4,13 @@
     {
         public string shoribi { get; set; }
         public string shoriJikoku { get; set; }
-        public int keiyakushaId { get; set; }
-        public int riyoshaId { get; set; }
         public int temban { get; set; }
         public int cifBango { get; set; }
         public int kamokuCode { get; set; }
         public int toriatsukaiBango { get; set; }
+        public int ikanYomikaeHyoji { get; set; }
         public int hensaiyoKozaTemban { get; set; }
-        public string hensaiyoKozatenmeiKanji { get; set; }
+        public string hensaiyoKozaTenmeiKanji { get; set; }
         public int hensaiyoKozaKamokuCode { get; set; }
         public int hensaiyoKozabango { get; set; }
         public string hensaiyoKozameigiKana { get; set; }

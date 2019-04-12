@@ -6,7 +6,7 @@
         public int riyoshaId { get; set; }
         public int shoriKubun { get; set; }
         public int kakuninJikkoKubun { get; set; }
-        public KoshinKoza[] KoshinKoza;
+        public KoshinKoza[] KoshinKoza { get; set; }
 
         public KozaRiyoKengenHenko()
         {

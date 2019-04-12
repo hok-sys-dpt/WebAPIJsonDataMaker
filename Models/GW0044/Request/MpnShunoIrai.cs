@@ -34,6 +34,7 @@
         {
 
             const int MaxItemCount = 2;
+
             ChannelJoho = new ChannelJoho();
             HishimukeCenterCode = new HishimukeCenterCode();
             MinkanSeikyuJoho = new MinkanSeikyuJoho();
@@ -41,6 +42,7 @@
             KokkokinNohuJoho = new KokkokinNohuJoho();
             ShukkinKoza = new ShukkinKoza();
             KensaKomoku = new KensaKomoku();
+
             HosutoShoriTsubanJoho = new HosutoShoriTsubanJoho[MaxItemCount];
 
             for (int count = 0; count < MaxItemCount; count++)

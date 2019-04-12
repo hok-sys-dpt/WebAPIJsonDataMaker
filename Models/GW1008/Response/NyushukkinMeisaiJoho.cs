@@ -6,6 +6,8 @@ namespace WebAPIJsonDataMaker.Models.GW1008.Response
         public string torihikiJikoku { get; set; }
         public long torihikiTsuban { get; set; }
         public int sequence { get; set; }
+        public int cycleBango { get; set; }
+        public int torihikimeisaiBango { get; set; }
         public int iriharaiKubun { get; set; }
         public long torihikiKingaku { get; set; }
         public long torihikigoZandaka { get; set; }
