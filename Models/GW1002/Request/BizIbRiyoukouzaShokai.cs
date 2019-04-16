@@ -2,7 +2,7 @@ using WebAPIJsonDataMaker.Models.GW1002;
 
 namespace WebAPIJsonDataMaker.Models.GW1002.Request
 {
-    public class BizIbRiyoukouzaShokai
+    public class BizIbRiyoukozaShokai
     {
         public int keiyakushaId { get; set; }
         public int riyoshaId { get; set; }

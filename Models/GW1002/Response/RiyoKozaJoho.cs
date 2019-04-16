@@ -13,6 +13,7 @@ namespace WebAPIJsonDataMaker.Models.GW1002.Response
         public int cifBango { get; set; }
         public long orgId { get; set; }
         public string kozameigiKana { get; set; }
+        public string sakuinyoKozameigiKana { get; set; }
         public string kozameigiKanji { get; set; }
         public string tsukaCode { get; set; }
         public int furikomiNyukinTsuchiHyoji { get; set; }

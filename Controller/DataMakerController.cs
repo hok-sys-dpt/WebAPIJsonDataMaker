@@ -25,7 +25,22 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
-
+                //GW0011外貨預金金利照会
+                case "GW0011":
+                    {
+                        IGWLogic iGWLogic = new GW0011Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
                 //Gw0012外貨預金残高照会
                 case "GW0012":
                     {
@@ -119,6 +134,22 @@ namespace WebAPIJsonDataMaker.Controller
                     {
                         IGWLogic iGWLogic = new GW0030Logic();
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        break;
+                    }
+                //GW0031定期預金金利照会
+                case "GW0031":
+                    {
+                        IGWLogic iGWLogic = new GW0031Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
                         break;
                     }
                 //Gw0047MPN情報リンク表示項目照会

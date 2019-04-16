@@ -50,15 +50,15 @@ namespace WebAPIJsonDataMaker.Logic
 
             foreach (GW0043ResponseCsv data in records)
             {
-                var records2 = csv2.GetRecords<HosutoShoriTsubanJoho>().ToArray();
+                var records2 = csv2.GetRecords<MinkanSeikyuJoho>().ToArray();
                 var model = new ResponseCsv()
                 {
                     GW0043ResponseCsv = data
                 };
                 var i = 0;
-                foreach (HosutoShoriTsubanJoho joho in records2)
+                foreach (MinkanSeikyuJoho joho in records2)
                 {
-                    model.GW0043ResponseCsv.MpnSeikyujohoShokai.HosutoShoriTsubanJoho[i] = joho;
+                    model.GW0043ResponseCsv.MpnSeikyujohoShokai.MinkanSeikyuJoho[i] = joho;
                     i++;
                 }
                 yield return (model);
