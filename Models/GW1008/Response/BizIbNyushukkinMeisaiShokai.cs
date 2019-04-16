@@ -7,6 +7,7 @@ namespace WebAPIJsonDataMaker.Models.GW1008.Response
         public long orgId { get; set; }
         public KurikaeshiSeigyo KurikaeshiSeigyo { get; set; }
         public NyushukkinMeisaiJoho[] NyushukkinMeisaiJoho;
+        public int otoKensu { get; set; }
 
         public BizIbNyushukkinMeisaiShokai()
         {
