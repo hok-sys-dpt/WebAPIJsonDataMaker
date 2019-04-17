@@ -6,8 +6,8 @@
         public string uketsukeJikoku { get; set; }
         public int kinoKubun { get; set; }
         public int torihikiKubun { get; set; }
-        public long kingaku { get; set; }
         public int torihikiStatus { get; set; }
         public string hunoRiyu { get; set; }
+        public long kingaku { get; set; }
     }
 }
