@@ -6,9 +6,8 @@ namespace WebAPIJsonDataMaker.Models.GW1008.Response
         public string shoriJikoku { get; set; }
         public long orgId { get; set; }
         public KurikaeshiSeigyo KurikaeshiSeigyo { get; set; }
-        public NyushukkinMeisaiJoho[] NyushukkinMeisaiJoho;
         public int otoKensu { get; set; }
-
+        public NyushukkinMeisaiJoho[] NyushukkinMeisaiJoho { get; set; }
         public BizIbNyushukkinMeisaiShokai()
         {
             const int MaxItemCount = 25;

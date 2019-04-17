@@ -10,13 +10,7 @@
     public class ResponseMessageData
     {
         public WisResponseSystemInfo WisResponseSystemInfo { get; set; }
-        public MpnShunoIrai MpnShunoIrai;
-
-        public ResponseMessageData()
-        {
-            WisResponseSystemInfo = new WisResponseSystemInfo();
-            MpnShunoIrai = new MpnShunoIrai();
-        }
+        public MpnShunoIrai MpnShunoIrai { get; set; }
 
     }
 }

@@ -7,10 +7,10 @@
 
     using WebAPIJsonDataMaker.Models.Common;
 
-    public class ResponseMessageData : WisResponseSystemInfo
+    public class ResponseMessageData
     {
         public WisResponseSystemInfo WisResponseSystemInfo { get; set; }
-        public SenyotozakashikoshiIreiHensai SenyotozakashikoshiIreiHensai;
+        public SenyotozakashikoshiIreiHensai SenyotozakashikoshiIreiHensai { get; set; }
 
         
     }

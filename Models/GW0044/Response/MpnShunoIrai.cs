@@ -68,9 +68,5 @@
         public long kokkokinnaiTesuryo { get; set; }
         public ShukkinKoza ShukkinKoza { get; set; }
 
-        public MpnShunoIrai()
-        {
-            ShukkinKoza = new ShukkinKoza();
-        }
     }
 }

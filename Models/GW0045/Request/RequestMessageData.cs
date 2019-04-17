@@ -15,7 +15,7 @@
     public class RequestMessageData : IWisRequestSystemInfo
     {
         public WisRequestSystemInfo WisRequestSystemInfo { get; set; }
-        public MpnShunokikanYohiShokai MpnShunokikanYohiShokai;
+        public MpnShunokikanYohiShokai MpnShunokikanYohiShokai { get; set; }
 
         
     }

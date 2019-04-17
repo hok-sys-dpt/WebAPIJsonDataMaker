@@ -5,6 +5,6 @@
     public class RequestMessageData : IWisRequestSystemInfo
     {
         public WisRequestSystemInfo WisRequestSystemInfo { get; set; }
-        public SenyotozakashikoshiIreiHensai SenyotozakashikoshiIreiHensai;
+        public SenyotozakashikoshiIreiHensai SenyotozakashikoshiIreiHensai { get; set; }
     }
 }
