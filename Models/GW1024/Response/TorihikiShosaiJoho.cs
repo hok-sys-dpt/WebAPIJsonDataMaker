@@ -16,10 +16,8 @@
         public int shohinUchiwake2 { get; set; }
         public int shohinUchiwake3 { get; set; }
         public int yonyuKikan { get; set; }
-        public string yonyuKikanMongon { get; set; }
         public int keizokuKubun { get; set; }
         public int kazeiKubun { get; set; }
-        public string kazeiKubunMeisho { get; set; }
         public string yonyubi { get; set; }
         public string mankibi { get; set; }
         public int mankiAnnaiYohuyoKubun { get; set; }

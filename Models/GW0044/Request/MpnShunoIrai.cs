@@ -4,6 +4,7 @@
     {
         public ChannelJoho ChannelJoho { get; set; }
         public string seikyuJohoShokaiShoribi { get; set; }
+        public HosutoShoriTsubanJoho[] HosutoShoriTsubanJoho { get; set; }
         public HishimukeCenterCode HishimukeCenterCode { get; set; }
         public int shiharaiKeitai { get; set; }
         public string riyoshameiKana { get; set; }
@@ -28,7 +29,6 @@
         public ShukkinKoza ShukkinKoza { get; set; }
         public KensaKomoku KensaKomoku { get; set; }
         public int saishuShunoIraiFlag { get; set; }
-        public HosutoShoriTsubanJoho[] HosutoShoriTsubanJoho { get; set; }
 
         public MpnShunoIrai()
         {
