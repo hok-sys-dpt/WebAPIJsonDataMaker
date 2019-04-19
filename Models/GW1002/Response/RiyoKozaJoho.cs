@@ -8,7 +8,6 @@ namespace WebAPIJsonDataMaker.Models.GW1002.Response
         public string tenmeiKanji { get; set; }
         public int kamokuCode { get; set; }
         public int kamokuCodeUchiwake { get; set; }
-        public string kamokumeiKanji { get; set; }
         public int kozabango { get; set; }
         public int cifBango { get; set; }
         public long orgId { get; set; }

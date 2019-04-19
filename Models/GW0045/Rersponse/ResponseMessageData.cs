@@ -10,6 +10,6 @@
     public class ResponseMessageData
     {
         public WisResponseSystemInfo WisResponseSystemInfo { get; set; }
-        public MpnShunokikanYohiShokai MpnShunokikanYohiShokai;
+        public MpnShunokikanYohiShokai MpnShunokikanYohiShokai { get; set; }
     }
 }
