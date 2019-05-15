@@ -24,5 +24,6 @@
         public int shikinshitoCode { get; set; }
         public int gankinShiharaiCycle { get; set; }
         public long maikaiGankinHensaigaku { get; set; }
+        public long kariireKanoKingaku { get; set; }
     }
 }
