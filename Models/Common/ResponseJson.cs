@@ -45,6 +45,7 @@ using WebAPIJsonDataMaker.Models.GW1027.Response;
 using WebAPIJsonDataMaker.Models.GW1026.Response;
 using WebAPIJsonDataMaker.Models.GW1028.Response;
 using WebAPIJsonDataMaker.Models.GW1021.Response;
+using WebAPIJsonDataMaker.Models.GW1029.Response;
 
 namespace WebAPIJsonDataMaker.Models.Common
 {
@@ -97,5 +98,6 @@ namespace WebAPIJsonDataMaker.Models.Common
         public GW1020ResponseJson GW1020ResponseJson { get; set; }
         public GW1022ResponseJson GW1022ResponseJson { get; set; }
         public GW1023ResponseJson GW1023ResponseJson { get; set; }
+        public GW1029ResponseJson GW1029ResponseJson { get; set; }
     }
 }

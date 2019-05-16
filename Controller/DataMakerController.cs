@@ -482,6 +482,22 @@ namespace WebAPIJsonDataMaker.Controller
                         newData(iGWLogic, csv, apino, reqOrRes, outputpath);
                         break;
                     }
+                //GW1029法人IB専用当座貸越利用口座照会
+                case "GW1029":
+                    {
+                        IGWLogic iGWLogic = new GW1029Logic();
+                        if (reqOrRes == "request")
+                        {
+                            newData(iGWLogic, csv, apino, reqOrRes, outputpath);
+                        }
+                        else
+                        {
+                            var reader2 = new StreamReader(path2, Encoding.GetEncoding("shift-jis"));
+                            var csv2 = new CsvReader(reader2);
+                            newListData(iGWLogic, csv, csv2, apino, reqOrRes, outputpath);
+                        }
+                        break;
+                    }
                 //上記以外のAPI
                 default:
                     throw new Exception("API番号が誤っています");
