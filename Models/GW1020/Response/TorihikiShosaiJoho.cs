@@ -9,7 +9,7 @@
         public int toriatsukaiBango{ get; set; }
         public int hensaiyoTemban{ get; set; }
         public string hensaiyoKanjiTenmei{ get; set; }
-        public string hensaiyoKamokuCode{ get; set; }
+        public int hensaiyoKamokuCode{ get; set; }
         public int hensaiyoKozabango{ get; set; }
         public string kozameigiKana{ get; set; }
         public string kozameigiKanji{ get; set; }
